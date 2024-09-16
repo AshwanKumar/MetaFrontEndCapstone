@@ -2,10 +2,10 @@ import LittleLemonFooterLogo from '../assets/LittleLemonFooterLogo.png';
 function Footer () {
     return(
         <footer>
-            <div class="footer-container">
+            <div className="footer-container">
                 <img src={LittleLemonFooterLogo} alt="little lemon logo" width="100px" height="200px" />
-                <div class="footer-wrapper">
-                    <div class="about">
+                <div className="footer-wrapper">
+                    <div className="about">
                         <h4>About Us</h4>
                         <ul>
                             <li><a href="/">Our Company</a></li>
@@ -16,7 +16,7 @@ function Footer () {
                             <li><a href="/">Contact Us</a></li>
                         </ul>
                     </div>
-                    <div class="contact-info">
+                    <div className="contact-info">
                         <h4>Contacts</h4>
                         <ul>
                             <li><a href="tel:123-456-7890">+1(123)456-7890</a></li>
@@ -24,7 +24,7 @@ function Footer () {
                             <li><address>123 Ford Blvd, Chicago, IL, 60618</address></li>
                         </ul>
                     </div>
-                    <div class="availability">
+                    <div className="availability">
                         <h4>Availability</h4>
                         <ul>
                             <li>Tues-Thurs: 12pm-10pm</li>
@@ -32,12 +32,12 @@ function Footer () {
                             <li>Mon: Closed</li>
                         </ul>
                     </div>
-                    <div class="social-media">
-                        <h4>About Us</h4>
+                    <div className="social-media">
+                        <h4>Social</h4>
                         <ul>
-                            <a href="https://www.instagram.com"><li>Instagram</li></a>
-                            <a href="https://www.facebook.com"><li>Facebook</li></a>
-                            <a href="https://www.pintrest.com"><li>Pintrest</li></a>
+                            <li><a href="https://www.instagram.com">Instagram</a></li>
+                            <li><a href="https://www.facebook.com">Facebook</a></li>
+                            <li> <a href="https://www.pintrest.com">Pintrest</a></li>
                         </ul>
                     </div>
                 </div>
