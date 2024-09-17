@@ -360,7 +360,7 @@ footer {
     max-width: 500px;
 }
 
-.reservation-form form div {
+.reservation-form form .form-field, .reservation-form form .form-button {
     display:flex;
     flex-direction:column;
     margin-bottom: 2rem;
@@ -380,9 +380,37 @@ footer {
     font-size: 16px;
 }
 
-.field-error {
+.error-message {
     color: red;
     font-size: 14px;
+}
+
+.confirmed-booking {
+    display:flex;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding:0.5rem;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    background:#495e57;
+    color:#ffffff;
+}
+
+.confirmed-booking h2 {
+    margin-bottom:0.2rem;
+}
+
+.under-construction {
+    display:flex;
+    margin: 1rem;
+    border-radius: 1rem;
+    padding:0.5rem;
+    flex-direction:column;
+    align-items:center;
+    justify-content: center;
+    background:#edefee;
+    color:#495e57;
 }
 
 @media only screen and (max-width: 1200px) {

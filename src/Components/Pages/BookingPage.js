@@ -1,29 +1,35 @@
-import BookingForm from "../BookingForm";
-import { useState } from 'react';
+import { useReducer } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { fetchAPI, submitAPI } from '../Utils/fakeAPI';
+import BookingForm from '../BookingForm';
 
-function BookingPage() {
-    const [bookingDetails, setBookingDetails] =  useState({
-        date: new Date(),
-        time: "17:00",
-        guests: 0,
-        occasion:"Birthday"
-    });
+const updateTimes = (availableTimes, date) => {
+  const response = fetchAPI(new Date(date));
+  return (response.length !== 0) ? response : availableTimes; 
+};
 
-    const HandleBookingChanges = (state) => {
-        setBookingDetails(state);
-    }
+const initializeTimes = initialAvailableTimes => 
+  [...initialAvailableTimes, ...fetchAPI(new Date())];
 
-    const HandleBookingSubmit = () => {
-       console.log(JSON.stringify(bookingDetails));
-    };
-    return (
-        <section>
-             <div className="reservation-form">
-                <h2>Reserve Table</h2>
-                <BookingForm bookingData={bookingDetails} handleFormChanges={HandleBookingChanges} HandleSubmit={HandleBookingSubmit} />
-             </div>
-        </section>
-    )
-}
+const BookingPage = () => {
+  const [availableTimes, dispatchOnDateChange] = useReducer(updateTimes, [], initializeTimes);
+  const navigate = useNavigate();
+
+  const submitData = formData => {
+    const response = submitAPI(formData);
+    if (response) navigate('/confirmedBooking');
+  }; 
+
+  return (
+    <div className="reservation-form">
+      <h2>Table reservation</h2>
+      <BookingForm 
+        availableTimes={availableTimes} 
+        dispatchOnDateChange={dispatchOnDateChange} 
+        submitData={submitData} 
+      />
+    </div>
+  );
+};
 
 export default BookingPage;
