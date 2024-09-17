@@ -43,7 +43,7 @@ function BookingForm(props) {
                 type="date" 
                 name="res-date" 
                 placeholder="dd/mm/yyyy" 
-                min="2024-09-16"
+                min={new Date().toISOString().split("T")[0]} 
                 id="res-date" 
                 value={props.bookingData.date}
                 required

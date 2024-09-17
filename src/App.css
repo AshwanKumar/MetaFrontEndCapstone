@@ -272,15 +272,6 @@ header {
     padding: 1rem;
 }
 
-@media only screen and (max-width: 1200px) {
-    .reviews {
-        gap: 1rem;
-    }
-    .review {
-        width: 300px;
-    }
-}
-
 .client {
     border-radius: 50%;
     display: block;
@@ -392,4 +383,29 @@ footer {
 .field-error {
     color: red;
     font-size: 14px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .reviews {
+        gap: 1rem;
+    }
+    .review {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .navigation, .hero-detail, .about-us-container, footer-container {
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+    }
+    .hero-container {
+        flex-direction: column;
+        height:450px;
+    }
+    .hero-img {
+        display:none;
+    }
 }
